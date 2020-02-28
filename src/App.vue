@@ -4,6 +4,7 @@
     <board :boardState="boardState"/>
     <next-tile-area/>
     <scoreboard/>
+    <tile/>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import Board from './components/Board.vue'
 import NextTileArea from './components/NextTileArea.vue'
 import Scoreboard from './components/Scoreboard.vue'
+import Tile from './components/Tile.vue'
 
 export default {
   name: "app",
@@ -22,7 +24,8 @@ export default {
   components: {
     'board': Board,
     'next-tile-area': NextTileArea,
-    'scoreboard': Scoreboard
+    'scoreboard': Scoreboard,
+    'tile': Tile
   }
 }
 </script>
