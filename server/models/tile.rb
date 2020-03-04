@@ -16,17 +16,6 @@ class Tile
     return @sides[0..-1]
   end
 
-  def make_hash()
-    return {
-      "id" => @id,
-      "sides" => @sides,
-      "centre" => @centre,
-      "has_junction" => @has_junction,
-      "has_shield" => @has_shield,
-      "image_url" => @image_url
-    }
-  end
-
   def save()
     sql = "INSERT INTO tiles
     (side_0, side_1, side_2, side_3, centre, has_junction, has_shield, image_url)
@@ -40,12 +29,12 @@ class Tile
   def self.find(id)
     sql = "SELECT * FROM tiles WHERE id = $1"
     values = [id]
-    return Tile.new(SqlRunner.run(sql, values)[0]).make_hash()
+    return Tile.new(SqlRunner.run(sql, values)[0])
   end
 
   def self.all
     sql = "SELECT * FROM tiles"
-    return SqlRunner.run(sql).map{ |tile| Tile.new(tile).make_hash() }
+    return SqlRunner.run(sql).map{|tile| Tile.new(tile)}
   end
 
   def self.delete_all()

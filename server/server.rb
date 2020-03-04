@@ -1,10 +1,11 @@
-require('sinatra')
-require('sinatra/contrib/all')
-require_relative('./models/tile')
-also_reload('models/*')
+require 'sinatra'
+require 'sinatra/contrib/all'
+require_relative './schemas/TileSchema'
+require_relative './models/tile'
+also_reload 'models/*'
 
 get '/' do
-  erb(:index)
+  erb :index
 end
 
 before do
@@ -12,11 +13,9 @@ before do
 end
 
 get '/api/tiles' do
-  @tiles = Tile.all()
-  @tiles.to_json()
+  TileSchema.dump_all Tile.all
 end
 
 get '/api/tiles/:id' do
-  @tile = Tile.find(params[:id])
-  @tile.to_json()
+  TileSchema.dump Tile.find params[:id]
 end

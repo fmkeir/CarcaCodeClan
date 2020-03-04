@@ -11,7 +11,7 @@ tile1 = Tile.new({
   "centre" => "",
   "has_junction" => false,
   "has_shield" => true,
-  "image_url" => ""
+  "image_url" => "http://localhost:4567/assets/castle1_road_curve_left.jpg"
   })
 tile1.save()
 tile1.save()
