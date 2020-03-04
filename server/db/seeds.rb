@@ -1,7 +1,6 @@
-require_relative('../models/tile')
-require('pry')
+require_relative '../models/tile'
 
-Tile.delete_all()
+Tile.delete_all
 
 tile1 = Tile.new({
   "side_0" => "grass",
@@ -13,10 +12,7 @@ tile1 = Tile.new({
   "has_shield" => true,
   "image_url" => "http://localhost:4567/assets/castle1_road_curve_left.jpg"
   })
-tile1.save()
-tile1.save()
-tile1.save()
-tile1.save()
-
-binding.pry
-nil
+tile1.save
+tile1.save
+tile1.save
+tile1.save
