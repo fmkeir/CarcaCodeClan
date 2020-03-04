@@ -4,8 +4,8 @@ class TileSchema
       "id" => tile.id,
       "sides" => tile.get_sides,
       "centre" => tile.centre,
-      "hasJunction" => tile.has_junction,
-      "hasShield" => tile.has_shield,
+      "hasJunction" => tile.has_junction == "t",
+      "hasShield" => tile.has_shield == "t",
       "imageURL" => tile.image_url
     }
   end
