@@ -18,7 +18,8 @@ export default {
   name: "app",
   data(){
     return {
-      boardState: Array(121).fill("")
+      boardState: Array(121).fill(""),
+      tiles: []
     }
   },
   components: {
@@ -26,6 +27,11 @@ export default {
     'next-tile-area': NextTileArea,
     'scoreboard': Scoreboard,
     'tile': Tile
+  },
+  mounted(){
+    fetch('https://carcacodeclan-tile-api.herokuapp.com/api/v1/tiles')
+      .then(res => res.json())
+      .then(data => this.tiles = data)
   }
 }
 </script>
