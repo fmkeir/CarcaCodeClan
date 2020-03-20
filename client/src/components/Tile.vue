@@ -11,7 +11,7 @@ export default {
     rotateImage: function () {
        let img = document.getElementById('myimage');
        img.style.transform = `rotate(${this.imgRotation += 90}deg)`;
-       this.currentTile.sides.unshift(this.sides.pop());
+       this.currentTile.sides.unshift(this.currentTile.sides.pop());
        console.log(this.currentTile.sides)
     },
     drag: function(ev) {

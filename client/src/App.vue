@@ -27,10 +27,21 @@ export default {
     'scoreboard': Scoreboard,
     'tile': Tile
   },
+  methods: {
+    shuffle: function (a) {
+    let startTile = a.splice(46,1)
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    a.unshift(startTile[0])
+    return a;
+  }
+},
   mounted(){
     fetch('https://carcacodeclan-tile-api.herokuapp.com/api/v1/tiles')
       .then(res => res.json())
-      .then(data => this.tiles = data)
+      .then(data => this.tiles = this.shuffle(data))
   }
 }
 </script>
