@@ -1,12 +1,24 @@
 <template lang="html">
   <div class="new-tile-container">
-    <p>New Tile Area</p>
+    <div class="tile-display">
+      <tile :currentTile="tiles[0]"/>
+    </div>
   </div>
 </template>
 
 <script>
+import Tile from './Tile.vue'
+
 export default {
+  name: 'NextTileArea',
+  props: ["tiles"],
+  components: {
+    'tile': Tile
+  }
+
 }
+
+
 </script>
 
 <style lang="css" scoped>
@@ -18,4 +30,11 @@ export default {
   height: 500px;
   background-color: lightgrey;
 }
+
+.tile-display{
+  margin: 30px auto;
+  width: 300px;
+
+}
+
 </style>

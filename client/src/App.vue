@@ -2,9 +2,8 @@
   <div class="main">
     <h1> CarcaCodeClan </h1>
     <board :boardState="boardState"/>
-    <next-tile-area/>
+    <next-tile-area :tiles="tiles"/>
     <scoreboard/>
-    <tile/>
   </div>
 </template>
 
