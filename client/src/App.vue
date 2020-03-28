@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import {eventBus} from '@/main.js'
 import Board from './components/Board.vue'
 import NextTileArea from './components/NextTileArea.vue'
 import Scoreboard from './components/Scoreboard.vue'
@@ -42,6 +43,11 @@ export default {
     fetch('https://carcacodeclan-tile-api.herokuapp.com/api/v1/tiles')
       .then(res => res.json())
       .then(data => this.tiles = this.shuffle(data))
+
+    eventBus.$on('tile-dropped', payload => {
+      this.boardState[payload.index] = payload.tile;
+      this.tiles.shift();
+    })
   }
 }
 </script>

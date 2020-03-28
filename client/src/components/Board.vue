@@ -1,7 +1,6 @@
 <template lang="html">
   <div class="board-container">
-    <square v-for="(square, index) in boardState">
-      <img :src="boardState[index]" alt="Board" v-if="square">
+    <square v-for="(square, index) in boardState" :index="index">
     </square>
   </div>
 

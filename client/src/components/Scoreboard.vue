@@ -12,7 +12,7 @@ export default {
 <style lang="css" scoped>
 .scoreboard {
   position: fixed;
-  left: 50%;
+  left: 60%;
   bottom: 20%;
   width: 500px;
   height: 100px;

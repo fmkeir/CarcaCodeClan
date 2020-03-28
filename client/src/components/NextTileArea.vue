@@ -15,7 +15,6 @@ export default {
   components: {
     'tile': Tile
   }
-
 }
 
 
@@ -24,10 +23,10 @@ export default {
 <style lang="css" scoped>
 .new-tile-container {
   position: fixed;
-  left: 50%;
+  left: 60%;
   top: 10%;
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   background-color: lightgrey;
 }
 
