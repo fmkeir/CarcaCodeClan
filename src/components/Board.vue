@@ -25,6 +25,9 @@ export default {
   grid-template-red: repeat(11, 1fr);
   width: 770px;
   height: 770px;
+  position: fixed;
+  left: 2%;
+  top: 5%;
 }
 
 </style>
