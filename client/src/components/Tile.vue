@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+import {eventBus} from '@/main.js'
 
 export default {
   name: 'Tile',
@@ -19,6 +20,9 @@ export default {
       const payload = JSON.stringify(draggedTile);
       ev.dataTransfer.setData("text", payload);
     }
+  },
+  mounted(){
+    eventBus.$on('tile-dropped', payload => {this.imgRotation = 0})
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="board-container">
-    <square v-for="(square, index) in boardState" :index="index">
+    <square v-for="(square, index) in boardState" :index="index" :boardState="boardState">
     </square>
   </div>
 
