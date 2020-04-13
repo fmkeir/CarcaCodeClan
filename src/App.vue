@@ -44,7 +44,7 @@ export default {
       .then(res => res.json())
       .then(data => this.tiles = this.shuffle(data))
 
-    eventBus.$on('tile-dropped', payload => {
+    eventBus.$on('tile-reset', payload => {
       this.boardState[payload.index] = payload.tile;
       this.tiles.shift();
     })

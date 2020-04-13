@@ -22,7 +22,9 @@ export default {
     }
   },
   mounted(){
-    eventBus.$on('tile-dropped', payload => {this.imgRotation = 0})
+    eventBus.$on('tile-dropped', payload => {
+      this.imgRotation = 0
+      eventBus.$emit('tile-reset', payload)})
   },
   data() {
     return {
