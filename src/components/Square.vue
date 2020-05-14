@@ -60,7 +60,8 @@ export default {
       }
     },
     dropIsAllowed: function(tile){
-      return this.checkTop(tile.sides[0]) &&
+      return this.boardState[this.index] === "" &&
+      this.checkTop(tile.sides[0]) &&
       this.checkRight(tile.sides[1]) &&
       this.checkBottom(tile.sides[2]) &&
       this.checkLeft(tile.sides[3])
