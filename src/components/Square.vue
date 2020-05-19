@@ -22,9 +22,7 @@ export default {
       ev.preventDefault();
     },
     checkTop: function(side){
-      if (this.index <= 10){
-        return true
-      }
+      if (this.index <= this.rowLength-1){return true}
       if (this.boardState[this.index-11] === ""){
         return true
       } else {
@@ -32,9 +30,7 @@ export default {
       }
     },
     checkRight: function(side){
-      if ([10,21,32,43,54,65,76,87,98,109,120].includes(this.index)){
-        return true;
-      }
+      if (((this.index+1) % this.rowLength) === 0) {return true}
       if (this.boardState[this.index+1] === ""){
         return true
       } else {
@@ -42,7 +38,7 @@ export default {
       }
     },
     checkBottom: function(side){
-      if (this.index >= 110){return true};
+      if (this.index >= this.boardState.length-this.rowLength){return true};
       if (this.boardState[this.index+11] === ""){
         return true
       } else {
@@ -50,9 +46,7 @@ export default {
       }
     },
     checkLeft: function(side){
-      if ([0,11,22,33,44,55,66,77,88,99,110].includes(this.index)){
-        return true;
-      }
+      if (this.index % this.rowLength === 0) {return true}
       if (this.boardState[this.index-1] === ""){
         return true
       } else {
@@ -60,11 +54,11 @@ export default {
       }
     },
     dropIsAllowed: function(tile){
-      return this.boardState[this.index] === "" &&
-      this.checkTop(tile.sides[0]) &&
+      return this.checkTop(tile.sides[0]) &&
       this.checkRight(tile.sides[1]) &&
       this.checkBottom(tile.sides[2]) &&
       this.checkLeft(tile.sides[3])
+      
     },
     drop: function(ev) {
       ev.preventDefault();
@@ -76,6 +70,9 @@ export default {
         eventBus.$emit('tile-dropped', payload)
       }
     }
+  },
+  computed: {
+    rowLength() { return Math.sqrt(this.boardState.length) }
   }
 }
 </script>

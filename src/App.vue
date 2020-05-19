@@ -62,12 +62,11 @@ export default {
 }
 
 .board {
-  width: 50%;
+  width: 50%
 }
 
 .right-half {
   width: 50%;
-
 }
 
 </style>
