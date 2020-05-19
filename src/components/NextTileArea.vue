@@ -3,7 +3,7 @@
     <div class="tile-display">
       <tile :currentTile="tiles[0]"/>
     </div>
-    <button>Discard Tile</button>
+    <button @click="discardTile">Discard Tile</button>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   props: ["tiles"],
   components: {
     'tile': Tile
+  },
+  methods: {
+    discardTile: function () {
+      this.tiles.shift()
+    }
   }
 }
 
