@@ -3,6 +3,7 @@
     <div class="tile-display">
       <tile :currentTile="tiles[0]"/>
     </div>
+    <button>Discard Tile</button>
   </div>
 </template>
 
@@ -17,7 +18,6 @@ export default {
   }
 }
 
-
 </script>
 
 <style lang="css" scoped>
@@ -28,12 +28,17 @@ export default {
   width: 200px;
   height: 200px;
   background-color: lightgrey;
+  text-align: center;
+}
+
+.new-tile-container button{
+  margin: 0 auto;
 }
 
 .tile-display{
   margin: 30px auto;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 
 }
 

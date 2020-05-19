@@ -38,6 +38,5 @@ export default {
 #myimage {
   width:70px;
   height:70px;
-  position: absolute;
 }
 </style>

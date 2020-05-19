@@ -1,9 +1,13 @@
 <template lang="html">
   <div class="main">
-    <h1> CarcaCodeClan </h1>
-    <board :boardState="boardState"/>
-    <next-tile-area :tiles="tiles"/>
-    <scoreboard/>
+    <div class="board-div">
+      <board :boardState="boardState"/>
+    </div>
+    <div class="right-half">
+      <h1> CarcaCodeClan </h1>
+      <next-tile-area :tiles="tiles"/>
+      <scoreboard/>
+    </div>
   </div>
 </template>
 
@@ -53,5 +57,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.main {
+  width: 100%;
+}
+
+.board {
+  width: 50%;
+}
+
+.right-half {
+  width: 50%;
+
+}
 
 </style>
