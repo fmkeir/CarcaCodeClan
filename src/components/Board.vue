@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="board-container">
-    <square v-for="(square, index) in boardState" :index="index" :boardState="boardState">
+    <square v-for="(square, index) in boardState" :index="index" :boardState="boardState" :boardIsEmpty="boardIsEmpty">
     </square>
   </div>
 
@@ -8,12 +8,21 @@
 
 <script>
 import Square from './Square.vue'
+import {eventBus} from '@/main.js'
 
 export default {
   name: 'board',
   props: ["boardState"],
   components: {
     'square': Square
+  },
+  data() {
+    return {
+      boardIsEmpty: true
+    }
+  },
+  mounted() {
+    eventBus.$on('tile-reset', payload => {this.boardIsEmpty = false})
   }
 }
 </script>

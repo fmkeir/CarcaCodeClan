@@ -10,11 +10,11 @@ import {eventBus} from '@/main.js'
 
 export default {
   name: 'Square',
-  props: ['index', 'boardState'],
+  props: ['index', 'boardState', 'boardIsEmpty'],
   data() {
     return {
       square: null,
-      rotation: ""
+      rotation: "",
     }
   },
   methods: {
@@ -23,10 +23,10 @@ export default {
     },
     checkTop: function(side){
       if (this.index <= this.rowLength-1){return true}
-      if (this.boardState[this.index-11] === ""){
+      if (this.boardState[this.index-this.rowLength] === ""){
         return true
       } else {
-        return side === this.boardState[this.index-11].sides[2];
+        return side === this.boardState[this.index-this.rowLength].sides[2];
       }
     },
     checkRight: function(side){
@@ -39,10 +39,10 @@ export default {
     },
     checkBottom: function(side){
       if (this.index >= this.boardState.length-this.rowLength){return true};
-      if (this.boardState[this.index+11] === ""){
+      if (this.boardState[this.index+this.rowLength] === ""){
         return true
       } else {
-        return side === this.boardState[this.index+11].sides[0];
+        return side === this.boardState[this.index+this.rowLength].sides[0];
       }
     },
     checkLeft: function(side){
@@ -53,15 +53,23 @@ export default {
         return side === this.boardState[this.index-1].sides[1];
       }
     },
+    checkIsAttached: function(){
+      return (this.boardState[this.index-this.rowLength] && this.boardState[this.index-this.rowLength] !== "") ||
+          this.boardState[this.index-1] !== "" ||
+          this.boardState[this.index+1] !== "" ||
+          (this.boardState[this.index+this.rowLength] && this.boardState[this.index+this.rowLength] !== "")
+    },
     dropIsAllowed: function(tile){
       return this.checkTop(tile.sides[0]) &&
       this.checkRight(tile.sides[1]) &&
       this.checkBottom(tile.sides[2]) &&
-      this.checkLeft(tile.sides[3])
-      
+      this.checkLeft(tile.sides[3]) &&
+      (this.checkIsAttached() || this.boardIsEmpty)
     },
     drop: function(ev) {
       ev.preventDefault();
+      console.log("attached?", this.checkIsAttached())
+      console.log("empty?", this.boardIsEmpty)
       const parsedPayload = JSON.parse(ev.dataTransfer.getData("text"));
       if (this.dropIsAllowed(parsedPayload.tile)){
         this.square = parsedPayload.tile;
