@@ -4,7 +4,7 @@
       <board :boardState="boardState"/>
     </div>
     <div class="right-half">
-      <h1> CarcaCodeClan </h1>
+      <p class="page-title"> CarcaCodeClan </p>
       <next-tile-area :tiles="tiles"/>
       <scoreboard class="scoreboard"/>
     </div>
@@ -74,6 +74,10 @@ export default {
   border: 1px solid black;
   padding: 1vh;
   text-align: center;
+}
+
+.page-title {
+  font-size: 6vh;
 }
 
 </style>

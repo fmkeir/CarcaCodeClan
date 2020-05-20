@@ -37,12 +37,12 @@ export default {
 }
 
 p {
-  font-size: 1.4em
+  font-size: 4vh;
 }
 
 .new-tile-container button{
   margin: 0 auto;
-  font-size: 1em;
+  font-size: 3vh;
   border: none;
   background: none;
   font-family: Luminari;

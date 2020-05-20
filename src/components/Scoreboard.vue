@@ -10,7 +10,7 @@
     <div class="players-display">
       <div v-for="player in players" class="player-details">
         <input type="number" placeholder="0" min="0">
-       <h2> {{player}}  </h2>
+       <p class="name"> {{player}} </p>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ export default {
 }
 
 .title {
-  font-size: 2em;
+  font-size: 4vh;
 }
 
 .player-input {
@@ -62,14 +62,14 @@ export default {
   border: none;
   background: none;
   font-family: Luminari;
-  font-size: 1.2em
+  font-size: 2vh
 }
 
 .player-input input {
   width: 8vw;
   margin: 0.5vh 0.25vw 0 0.25vw;
   font-family: Luminari;
-  font-size: 1.2em;
+  font-size: 2vh;
 }
 
 .players-display {
@@ -89,10 +89,14 @@ export default {
 
 .player-details input {
   width: 40px;
-  font-size: 1.5em;
+  font-size: 3vh;
   text-align: center;
   border: none;
   background: none;
   font-family: Luminari;
+}
+
+.name{
+  font-size: 3vh;
 }
 </style>
