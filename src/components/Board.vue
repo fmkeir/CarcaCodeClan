@@ -31,12 +31,11 @@ export default {
 .board-container {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-red: repeat(11, 1fr);
-  width: 770px;
-  height: 770px;
-  position: fixed;
-  left: 2%;
-  top: 5%;
+  grid-template-rows: repeat(11, 1fr);
+  width: 99vh;
+  height: 99vh;
+  margin-top: 0.5vh;
+  margin-left: 0.5vh;
 }
 
 </style>

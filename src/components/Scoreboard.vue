@@ -1,16 +1,15 @@
 <template lang="html">
   <div class="scoreboard">
     <div class="header">
-      <span>Scoreboard</span>
+      <span class="title">Scoreboard</span>
       <div class="player-input" v-if="this.players.length < 5">
-       <label for="player-name">Player Name:</label>
-       <input type="text" id="player-name" v-model="playerName"/>
+       <input type="text" id="player-name" placeholder="name" v-model="playerName"/>
        <button @click="addPlayer">Add Player</button>
       </div>
     </div>
     <div class="players-display">
       <div v-for="player in players" class="player-details">
-        <input type="number">
+        <input type="number" placeholder="0" min="0">
        <h2> {{player}}  </h2>
       </div>
     </div>
@@ -37,18 +36,20 @@ export default {
 
 <style lang="css" scoped>
 .scoreboard {
-  position: fixed;
-  left: 57vw;
-  bottom: 20%;
   width: 40vw;
-  height: 100px;
+  height: 17vh;
   background-color: lightgrey;
   padding: 0.5%;
+  margin: 0 auto;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+}
+
+.title {
+  font-size: 2em;
 }
 
 .player-input {
@@ -58,10 +59,17 @@ export default {
 
 .player-input button {
   padding: 0.5%;
+  border: none;
+  background: none;
+  font-family: Luminari;
+  font-size: 1.2em
 }
 
 .player-input input {
-  width: 100px
+  width: 8vw;
+  margin: 0.5vh 0.25vw 0 0.25vw;
+  font-family: Luminari;
+  font-size: 1.2em;
 }
 
 .players-display {
@@ -72,14 +80,19 @@ export default {
 }
 
 .player-details {
-  width: 20%;
-  height: 80px;
+  width: 7vw;
+  height: 10vh;
+  margin: 0.2vw;
   text-align: center;
-  border: solid black 1px;
+  padding: 0.5vh;
 }
 
 .player-details input {
   width: 40px;
   font-size: 1.5em;
+  text-align: center;
+  border: none;
+  background: none;
+  font-family: Luminari;
 }
 </style>

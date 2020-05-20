@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="new-tile-container">
+    <p>Next Tile</p>
     <div class="tile-display">
       <tile :currentTile="tiles[0]"/>
     </div>
@@ -27,23 +28,30 @@ export default {
 
 <style lang="css" scoped>
 .new-tile-container {
-  position: fixed;
-  left: 60%;
-  top: 10%;
-  width: 200px;
-  height: 200px;
+  width: 20vh;
+  height: 20vh;
   background-color: lightgrey;
   text-align: center;
+  margin: 5vh auto;
+  padding: 1vh;
+}
+
+p {
+  font-size: 1.4em
 }
 
 .new-tile-container button{
   margin: 0 auto;
+  font-size: 1em;
+  border: none;
+  background: none;
+  font-family: Luminari;
 }
 
 .tile-display{
-  margin: 30px auto;
-  width: 100px;
-  height: 100px;
+  margin: 1vh auto;
+  width: 9vh;
+  height: 9vh;
 
 }
 

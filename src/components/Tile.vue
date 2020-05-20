@@ -40,7 +40,7 @@ export default {
 </script>
 <style>
 #myimage {
-  width:70px;
-  height:70px;
+  width:9vh;
+  height:9vh;
 }
 </style>

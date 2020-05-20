@@ -96,8 +96,8 @@ export default {
 }
 
 img {
-  max-width: 70px;
-  max-height: 70px;
+  width: 9vh;
+  height: 9vh;
   position: absolute;
 }
 </style>

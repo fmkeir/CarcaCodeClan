@@ -6,7 +6,7 @@
     <div class="right-half">
       <h1> CarcaCodeClan </h1>
       <next-tile-area :tiles="tiles"/>
-      <scoreboard/>
+      <scoreboard class="scoreboard"/>
     </div>
   </div>
 </template>
@@ -59,6 +59,8 @@ export default {
 <style lang="css" scoped>
 .main {
   width: 100%;
+  display: flex;
+  font-family: Luminari;
 }
 
 .board {
@@ -66,7 +68,12 @@ export default {
 }
 
 .right-half {
-  width: 50%;
+  width: 45vw;
+  height: 99vh;
+  margin: 0.5vh 0.5vw;
+  border: 1px solid black;
+  padding: 1vh;
+  text-align: center;
 }
 
 </style>
