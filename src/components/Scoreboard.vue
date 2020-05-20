@@ -3,7 +3,7 @@
     <div class="header">
       <span class="title">Scoreboard</span>
       <div class="player-input" v-if="this.players.length < 5">
-       <input type="text" id="player-name" placeholder="name" v-model="playerName"/>
+       <input type="text" id="player-name" placeholder="name" v-model="playerName" @keyup.enter="addPlayer"/>
        <button @click="addPlayer">Add Player</button>
       </div>
     </div>

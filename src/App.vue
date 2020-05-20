@@ -71,7 +71,6 @@ export default {
   width: 45vw;
   height: 99vh;
   margin: 0.5vh 0.5vw;
-  border: 1px solid black;
   padding: 1vh;
   text-align: center;
 }
