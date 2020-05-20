@@ -1,10 +1,12 @@
 <template lang="html">
   <div class="scoreboard">
-    <span>Scoreboard</span>
-    <div class="player-input" v-if="this.players.length < 5">
-      <label for="player-name">Player Name:</label>
-      <input type="text" id="player-name" v-model="playerName"/>
-      <button @click="addPlayer">Add Player</button>
+    <div class="header">
+      <span>Scoreboard</span>
+      <div class="player-input" v-if="this.players.length < 5">
+       <label for="player-name">Player Name:</label>
+       <input type="text" id="player-name" v-model="playerName"/>
+       <button @click="addPlayer">Add Player</button>
+      </div>
     </div>
     <div class="players-display">
       <div v-for="player in players" class="player-details">
@@ -41,17 +43,36 @@ export default {
   width: 500px;
   height: 100px;
   background-color: lightgrey;
+  padding: 0.5%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-input {
+  width: 60%;
+  text-align: right;
+}
+
+.player-input button {
+  padding: 0.5%;
+}
+
+.player-input input {
+  width: 100px
 }
 
 .players-display {
   display: flex;
-  height: 70px;
-  width: 95%;
+  height: 80px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .player-details {
-  width: 80px;
+  width: 20%;
   height: 80px;
   text-align: center;
   border: solid black 1px;
