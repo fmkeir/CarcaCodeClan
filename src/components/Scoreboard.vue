@@ -1,9 +1,11 @@
 <template lang="html">
   <div class="scoreboard">
-    <p>Scoreboard</p>
-    <label for="player-name">Player Name:</label>
-    <input type="text" id="player-name" v-model="playerName"/>
-    <button @click="addPlayer">Add Player</button>
+    <span>Scoreboard</span>
+    <div class="player-input" v-if="this.players.length < 5">
+      <label for="player-name">Player Name:</label>
+      <input type="text" id="player-name" v-model="playerName"/>
+      <button @click="addPlayer">Add Player</button>
+    </div>
     <div class="players-display">
       <div v-for="player in players" class="player-details">
         <input type="number">
@@ -44,7 +46,7 @@ export default {
 .players-display {
   display: flex;
   height: 70px;
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 }
 
