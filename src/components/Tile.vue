@@ -11,9 +11,12 @@ export default {
   props: ['currentTile'],
   methods: {
     rotateImage: function () {
+        console.log("before", this.imgRotation)
        let img = document.getElementById('myimage');
        img.style.transform = `rotate(${this.imgRotation += 90}deg)`;
        this.currentTile.sides.unshift(this.currentTile.sides.pop());
+        console.log("after", this.imgRotation)
+
     },
     drag: function(ev) {
       const draggedTile = {"tile": this.currentTile, "rotation": this.imgRotation}
@@ -23,7 +26,8 @@ export default {
   },
   mounted(){
     eventBus.$on('tile-dropped', payload => {
-      this.imgRotation = 0
+      this.imgRotation = -90
+      this.rotateImage()
       eventBus.$emit('tile-reset', payload)})
   },
   data() {

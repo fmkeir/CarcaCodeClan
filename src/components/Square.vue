@@ -68,8 +68,6 @@ export default {
     },
     drop: function(ev) {
       ev.preventDefault();
-      console.log("attached?", this.checkIsAttached())
-      console.log("empty?", this.boardIsEmpty)
       const parsedPayload = JSON.parse(ev.dataTransfer.getData("text"));
       if (this.dropIsAllowed(parsedPayload.tile)){
         this.square = parsedPayload.tile;

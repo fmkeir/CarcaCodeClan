@@ -38,9 +38,9 @@ export default {
 <style lang="css" scoped>
 .scoreboard {
   position: fixed;
-  left: 60%;
+  left: 57vw;
   bottom: 20%;
-  width: 500px;
+  width: 40vw;
   height: 100px;
   background-color: lightgrey;
   padding: 0.5%;
