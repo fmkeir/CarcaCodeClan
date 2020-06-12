@@ -44,7 +44,7 @@ export default {
   }
 },
   mounted(){
-    fetch('https://carcacodeclan-tile-api.herokuapp.com/api/v1/tiles')
+    fetch('https://carcacodeclan-tile-api.fraserkeir.com/api/v1/tiles')
       .then(res => res.json())
       .then(data => this.tiles = this.shuffle(data))
 
